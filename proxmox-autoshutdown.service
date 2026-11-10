@@ -1,0 +1,17 @@
+[Unit]
+Description=Proxmox automatic host shutdown
+After=pve-cluster.service
+Wants=pve-cluster.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/proxmox-autoshutdown.sh
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=15
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=proxmox-autoshutdown
+
+[Install]
+WantedBy=multi-user.target
