@@ -1,0 +1,8 @@
+[Unit]
+Description=Auto-reload proxmox-autoshutdown.sh from GitHub
+
+[Service]
+Type=oneshot
+ExecStart=/opt/proxmox-autoshutdown/reload.sh
+StandardOutput=journal
+StandardError=journal

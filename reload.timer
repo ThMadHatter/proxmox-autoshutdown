@@ -1,0 +1,11 @@
+[Unit]
+Description=Proxmox autoshutdown - Automatic reload from GitHub
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+AccuracySec=1s
+Persistent=true
+
+[Install]
+WantedBy=timers.target
